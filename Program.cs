@@ -6,12 +6,17 @@ namespace empWage
     {
         static void Main(string[] args)
         {
-            int empPresent = 1;
+            int fullTimePresent = 1;
+            int partTimePresent = 2;
             Random random = new Random();
-            int EmpCheck = random.Next(0, 2);
+            int EmpCheck = random.Next(0, 3);
             int empHr;
             int empRatePerHr = 20;
-            if (EmpCheck == empPresent)
+            if (EmpCheck == fullTimePresent)
+            {
+                empHr = 16;
+            }
+            else if (EmpCheck == partTimePresent)
             {
                 empHr = 8;
             }
