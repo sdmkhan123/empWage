@@ -7,25 +7,34 @@ namespace empWage
         public const int fullTimePresent = 1;
         public const int partTimePresent = 2;
         public const int empRatePerHr = 20;
+        public const int maxWorkingDays = 20;
         static void Main(string[] args)
         {
-            Random random = new Random();
-            int EmpCheck = random.Next(0, 3);
             int empHr;
-            int empRatePerHr = 20;
-            switch (EmpCheck)
+            int day = 1;
+            int totalWorkHr = 0;
+            while (day <= maxWorkingDays)
             {
-                case fullTimePresent:
-                    empHr = 8;
-                    break;
-                case partTimePresent:
-                    empHr = 4;
-                    break;
-                default:
-                    empHr = 0;
-                    break;
+                Random random = new Random();
+                int EmpCheck = random.Next(0, 3);
+                switch (EmpCheck)
+                {
+                    case fullTimePresent:
+                        empHr = 8;
+                        break;
+                    case partTimePresent:
+                        empHr = 4;
+                        break;
+                    default:
+                        empHr = 0;
+                        break;
+                }
+                day++;
+                int dailyWage = empRatePerHr * empHr;
+                Console.WriteLine("Daily wage is " + dailyWage);
+                totalWorkHr += empHr;
             }
-            int totalWage = empRatePerHr * empHr;
+            int totalWage = empRatePerHr * totalWorkHr;
             Console.WriteLine("Total wage is " + totalWage);
         }
     }
