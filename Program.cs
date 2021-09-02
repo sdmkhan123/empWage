@@ -8,12 +8,13 @@ namespace empWage
         public const int partTimePresent = 2;
         public const int empRatePerHr = 20;
         public const int maxWorkingDays = 20;
+        public const int maxWorkingHrs = 100;
         static void Main(string[] args)
         {
             int empHr;
             int day = 1;
             int totalWorkHr = 0;
-            while (day <= maxWorkingDays)
+            while (day <= maxWorkingDays && totalWorkHr <= maxWorkingHrs)
             {
                 Random random = new Random();
                 int EmpCheck = random.Next(0, 3);
