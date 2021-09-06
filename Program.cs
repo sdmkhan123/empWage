@@ -9,7 +9,8 @@ namespace empWage
         public const int empRatePerHr = 20;
         public const int maxWorkingDays = 20;
         public const int maxWorkingHrs = 100;
-        static void Main(string[] args)
+
+        public static int classMethodToComputeEmpWage()
         {
             int empHr;
             int day = 1;
@@ -35,6 +36,12 @@ namespace empWage
                 Console.WriteLine("Daily wage is " + dailyWage);
                 totalWorkHr += empHr;
             }
+            return totalWorkHr;
+        }
+
+        static void Main(string[] args)
+        {
+            int totalWorkHr = classMethodToComputeEmpWage();
             int totalWage = empRatePerHr * totalWorkHr;
             Console.WriteLine("Total wage is " + totalWage);
         }
