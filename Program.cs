@@ -42,8 +42,14 @@ namespace empWage
         static void Main(string[] args)
         {
             int totalWorkHr = classMethodToComputeEmpWage();
+            //Refactor the Code to write a Class Method to Compute Employee Wage
             int totalWage = empRatePerHr * totalWorkHr;
             Console.WriteLine("Total wage is " + totalWage);
+            //compute Employee Wage for multiple companies
+            EmpWageForMultipleComp totalWageOfEachComp = new EmpWageForMultipleComp();
+            totalWageOfEachComp.classMethodToComputeEmpWage("CompanyOne", 20, 20, 100);
+            totalWageOfEachComp.classMethodToComputeEmpWage("CompanyTwo", 3, 30, 80);
+            totalWageOfEachComp.classMethodToComputeEmpWage("CompanyThree", 15, 10, 30);
         }
     }
 }
