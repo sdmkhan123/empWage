@@ -50,6 +50,8 @@ namespace empWage
             totalWageOfEachComp.classMethodToComputeEmpWage("CompanyOne", 20, 20, 100);
             totalWageOfEachComp.classMethodToComputeEmpWage("CompanyTwo", 3, 30, 80);
             totalWageOfEachComp.classMethodToComputeEmpWage("CompanyThree", 15, 10, 30);
+            totalWageOfEachComp.classMethodToComputeEmpWage("BridgeLabz", 30, 25, 70);
+
         }
     }
 }
