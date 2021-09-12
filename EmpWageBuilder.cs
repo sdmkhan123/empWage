@@ -24,8 +24,10 @@ namespace empWage
         {
             for(int i=0; i< companyEmpWagesList.Count; i++)
             {
+                Console.WriteLine("New Company wage");
                 companyEmpWagesList[i].setTotalWage(this.computeEmpWageofEachCompany(this.companyEmpWagesList[i]));
                 Console.WriteLine(companyEmpWagesList[i].toShowWage());
+                
             }
         }
         private int computeEmpWageofEachCompany(CompanyEmpWage companyEmpWage)
@@ -54,6 +56,8 @@ namespace empWage
                 day++;
                 //calculate total work hour
                 totalWorkHr += empHr;
+                int dailyWage = companyEmpWage.empRatePerHr * empHr;
+                Console.WriteLine("Daily wage of the company " + companyEmpWage.CompanyName + " is " + dailyWage);
             }
             //return total wage of that given comapany
             return totalWorkHr * companyEmpWage.empRatePerHr;
