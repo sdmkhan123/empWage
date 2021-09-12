@@ -8,5 +8,6 @@ namespace empWage
     {
         public void addCompanyWage(string CompanyName, int empRatePerHr, int maxWorkingDays, int maxWorkingHrs);
         public void computeEmpWageofEachCompany();
+        public void getTotalwage(string companyName);
     }
 }

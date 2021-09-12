@@ -6,8 +6,8 @@ namespace empWage
     {
         static void Main(string[] args)
         {
-            //UC-12 Manage Employee Wage of multiple companies using Array of Object
-            Console.WriteLine("UC-12 code for Manage Employee Wage of multiple companies using Interface and ArrayList of Object");
+            //UC-14 Manage Employee Wage of multiple companies using Array of Object
+            Console.WriteLine("UC-14 code for Manage Employee Wage of multiple companies using Interface, Dictionary and ArrayList of Object");
             Console.WriteLine("Enter number of company is present");
             int NumOfCompany = Convert.ToInt32(Console.ReadLine());
             EmpWageBuilder empWageBuilderArray = new EmpWageBuilder();
@@ -25,6 +25,9 @@ namespace empWage
             }
             //calling each company to compute seperate total wage
             empWageBuilderArray.computeEmpWageofEachCompany();
+            Console.WriteLine("Enter company Name");
+            string CompanyNameDict = Console.ReadLine();
+            empWageBuilderArray.getTotalwage(CompanyNameDict);
         }
     }
 }
