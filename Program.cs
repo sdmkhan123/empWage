@@ -73,7 +73,7 @@ namespace empWage
                 totalWorkHr += empHr;
             }
             int totalWage = empRatePerHr * totalWorkHr;
-            Console.WriteLine("Total emp wage of " + CompanyName + " company is " + totalWage + "using class method");
+            Console.WriteLine("Total emp wage of " + CompanyName + " company is " + totalWage + " using class method");
         }
         static void Main(string[] args)
         {
