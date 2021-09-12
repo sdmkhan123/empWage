@@ -8,26 +8,24 @@ namespace empWage
     {
         public const int fullTimePresent = 1;
         public const int partTimePresent = 2;
-        private int numOfCompany = 0;
-        private CompanyEmpWage[] companyEmpWagesArray;
+        private List<CompanyEmpWage> companyEmpWagesList;
         //Declare a constructor to create  object of that type
         public EmpWageBuilder()
         {
-            this.companyEmpWagesArray = new CompanyEmpWage[5];
+            this.companyEmpWagesList = new List<CompanyEmpWage>();
         }
         //store the object of the class for each company inside array
         public void addCompanyWage(string CompanyName, int empRatePerHr, int maxWorkingDays, int maxWorkingHrs)
         {
-            companyEmpWagesArray[this.numOfCompany] = new CompanyEmpWage(CompanyName, empRatePerHr, maxWorkingDays, maxWorkingHrs);
-            numOfCompany++;
+            this.companyEmpWagesList.Add(new CompanyEmpWage(CompanyName, empRatePerHr, maxWorkingDays, maxWorkingHrs));
         }
 
         public void computeEmpWageofEachCompany()
         {
-            for(int i=0; i< numOfCompany; i++)
+            for(int i=0; i< companyEmpWagesList.Count; i++)
             {
-                companyEmpWagesArray[i].setTotalWage(this.computeEmpWageofEachCompany(this.companyEmpWagesArray[i]));
-                Console.WriteLine(companyEmpWagesArray[i].toShowWage());
+                companyEmpWagesList[i].setTotalWage(this.computeEmpWageofEachCompany(this.companyEmpWagesList[i]));
+                Console.WriteLine(companyEmpWagesList[i].toShowWage());
             }
         }
         private int computeEmpWageofEachCompany(CompanyEmpWage companyEmpWage)
