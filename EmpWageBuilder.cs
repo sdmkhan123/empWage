@@ -4,7 +4,7 @@ using System.Text;
 
 namespace empWage
 {
-    public class EmpWageBuilder
+    public class EmpWageBuilder: InterfaceComputeWage
     {
         public const int fullTimePresent = 1;
         public const int partTimePresent = 2;
