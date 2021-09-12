@@ -6,7 +6,8 @@ namespace empWage
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("UC-11 code for Manage Employee Wage of multiple companies using interface and Array of Object");
+            //UC-12 Manage Employee Wage of multiple companies using Array of Object
+            Console.WriteLine("UC-12 code for Manage Employee Wage of multiple companies using Interface and ArrayList of Object");
             Console.WriteLine("Enter number of company is present");
             int NumOfCompany = Convert.ToInt32(Console.ReadLine());
             EmpWageBuilder empWageBuilderArray = new EmpWageBuilder();
