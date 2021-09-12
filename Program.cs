@@ -82,10 +82,11 @@ namespace empWage
             int totalWage = empRatePerHr * totalWorkHr;
             Console.WriteLine("Computer Total emp wage using class method is " + totalWage);
             //compute Employee Wage for multiple companies using class method
+            Console.WriteLine("UC-8 to compute Employee Wage for multiple companies");
             Console.WriteLine("Enter number of company is present");
             int NumOfCompany = Convert.ToInt32(Console.ReadLine());
             //enters the companies detail
-            while (NumOfCompany > 0)
+            for (int i = 0; i < NumOfCompany; i++)
             {
                 Console.WriteLine("Enter company Name");
                 string CompanyName = Console.ReadLine();
@@ -97,7 +98,24 @@ namespace empWage
                 int maxWorkingHrs = Convert.ToInt32(Console.ReadLine());
                 //calling each company to compute seperate total wage
                 classMethodToComputeCompanyEmpWage(CompanyName, empRatePerHr, maxWorkingDays, maxWorkingHrs);
-                NumOfCompany--;
+            }
+            //create constructor for each company
+            //compute Employee Wage for multiple companies
+            Console.WriteLine("UC-9 to compute Employee Wage for multiple companies");
+            for (int i=0; i< NumOfCompany; i++)
+            {
+                Console.WriteLine("Enter company Name");
+                string CompanyName = Console.ReadLine();
+                Console.WriteLine("Enter emp rate per hour of company");
+                int empRatePerHr = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Enter max working days of company");
+                int maxWorkingDays = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Enter max working hour of company");
+                int maxWorkingHrs = Convert.ToInt32(Console.ReadLine());
+                //calling each company to compute seperate total wage
+                EmpWageBuilder company = new EmpWageBuilder(CompanyName, empRatePerHr, maxWorkingDays, maxWorkingHrs);
+                company.computeEmpWageofEachCompany();
+                company.toShowWage();
             }
         }
     }
